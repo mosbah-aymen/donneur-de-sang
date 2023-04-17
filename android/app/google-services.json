@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "602674448712",
+    "project_id": "donneur-de-sang-4c76c",
+    "storage_bucket": "donneur-de-sang-4c76c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602674448712:android:6f2262d6b2356f3e9f0b7d",
+        "android_client_info": {
+          "package_name": "com.example.donneurs_de_sang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602674448712-lt5j4mr90no4hb0i7mcae36duppnh1tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvyPyL1f93_1gatPYo6l7wJPwXKeNT2HY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602674448712-lt5j4mr90no4hb0i7mcae36duppnh1tg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
