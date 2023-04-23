@@ -5,6 +5,7 @@ import 'package:donneurs_de_sang/global_functions.dart';
 // ignore: unused_import
 import 'package:donneurs_de_sang/screens/signin/choose_type.dart';
 import 'package:donneurs_de_sang/screens/signin/login_container.dart';
+import 'package:donneurs_de_sang/screens/signin/signup_donneur.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -83,7 +84,7 @@ class _LoginDonneurState extends State<LoginDonneur> {
                     const Text('ou bien'),
                     TextButton(
                         onPressed: () {
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SigupContainer()));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignupDonneur()));
                         },
                         child: const Text('creer un compte')),
                   ],

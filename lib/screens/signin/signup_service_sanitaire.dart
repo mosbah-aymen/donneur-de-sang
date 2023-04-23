@@ -29,9 +29,10 @@ class SignupServiceSanitaireState extends State<SignupServiceSanitaire> {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,elevation: 0,leading: IconButton(
           onPressed: (){
-            loginControllerPage.animateToPage(0, duration:const Duration(seconds: 1), curve: Curves.fastLinearToSlowEaseIn);
+            Navigator.pop(context);
           },
-          icon: Icon(Icons.cancel_outlined,color: primaryColor,)),),
+          icon: Icon(Icons.arrow_back,color: primaryColor,)),
+      ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height*0.9,
         child: SingleChildScrollView(
@@ -136,7 +137,7 @@ class SignupServiceSanitaireState extends State<SignupServiceSanitaire> {
                   height: 20,
                 ),
                  FlatButton(
-                  text: "Sign up",
+                  text: "Créer Admin",
                   onTap: () async {
                     String? message = findError();
                     if (message != null) {
@@ -163,16 +164,7 @@ class SignupServiceSanitaireState extends State<SignupServiceSanitaire> {
                     }
                   },
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('vous avez un compte?'),
-                    TextButton(onPressed: (){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginDonneur()));
-                    }, child: const Text('connecter')),
-                  ],
-                ),
+
               ],
             ),
           ),

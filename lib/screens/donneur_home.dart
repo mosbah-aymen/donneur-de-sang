@@ -25,6 +25,7 @@ class _DonneurHomeState extends State<DonneurHome> {
           if (snapshot.hasData) {
             currentDonor = Donor.fromJson(snapshot.data!.data()!);
           }
+
           return !snapshot.hasData
               ? const Scaffold(
                   body: Center(child: CircularProgressIndicator()),
@@ -125,31 +126,35 @@ class _DonneurHomeState extends State<DonneurHome> {
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 8),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            QuickActionCard(
-                              icon: Icons.schedule,
-                              label: 'Prendre rendez-vous',
-                              onPressed: () {
+                        Expanded(
+                          child: GridView.count(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                            children: [
+                              QuickActionCard(
+                                icon: Icons.schedule,
+                                label: 'Prendre rendez-vous',
+                                onPressed: () {
 // Naviguer vers l'écran de prise de rendez-vous
-                              },
-                            ),
-                            QuickActionCard(
-                              icon: Icons.bookmark,
-                              label: 'Mes rendez-vous',
-                              onPressed: () {
+                                },
+                              ),
+                              QuickActionCard(
+                                icon: Icons.bookmark,
+                                label: 'Mes rendez-vous',
+                                onPressed: () {
 // Naviguer vers l'écran des rendez-vous
-                              },
-                            ),
-                            QuickActionCard(
-                              icon: Icons.favorite,
-                              label: 'Mes dons',
-                              onPressed: () {
+                                },
+                              ),
+                              QuickActionCard(
+                                icon: Icons.favorite,
+                                label: 'Mes dons',
+                                onPressed: () {
 // Naviguer vers l'écran des dons
-                              },
-                            ),
-                          ],
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

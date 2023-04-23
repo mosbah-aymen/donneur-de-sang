@@ -38,20 +38,9 @@ class _SignupDonneurState extends State<SignupDonneur> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              loginControllerPage.animateToPage(0, duration: const Duration(seconds: 1), curve: Curves.fastLinearToSlowEaseIn);
-            },
-            icon: Icon(
-              Icons.cancel_outlined,
-              color: primaryColor,
-            )),
-      ),
+
       body: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.9,
+        height: MediaQuery.of(context).size.height * 0.99,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -59,6 +48,9 @@ class _SignupDonneurState extends State<SignupDonneur> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 30,
+                ),
                 Image.asset(
                   'assets/images/Mobile wireframe-cuate.png',
                   height: 200,
@@ -139,7 +131,6 @@ class _SignupDonneurState extends State<SignupDonneur> {
                   onTap: () async {
                     String? message = findError();
                     if (message != null) {
-                      Navigator.pop(context);
                       Fluttertoast.showToast(msg:message,backgroundColor: primaryColor,gravity: ToastGravity.CENTER);
                     } else {
                       wait(context);

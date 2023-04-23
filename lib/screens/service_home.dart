@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:donneurs_de_sang/models/service_sanitaire.dart';
+import 'package:donneurs_de_sang/screens/list_des_rendez_vous.dart';
 import 'package:donneurs_de_sang/screens/signin/login_donneur.dart';
+import 'package:donneurs_de_sang/screens/signin/signup_service_sanitaire.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +32,7 @@ class _ServiceHomeState extends State<ServiceHome> {
                   child: Scaffold(
                   appBar: AppBar(
                     backgroundColor: primaryColor,
-                    title: const Text('Service Sanitaire'),
+                    title: const Text('Admin'),
                   ),
                   drawer: Drawer(
                     child: ListView(
@@ -88,8 +90,8 @@ class _ServiceHomeState extends State<ServiceHome> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Bienvenue, Service Sanitaire!',
+                         Text(
+                          'Bienvenue, ${currentServiceSanitaire!.name}',
                           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 16),
@@ -108,7 +110,7 @@ class _ServiceHomeState extends State<ServiceHome> {
                                 icon: Icons.schedule_rounded,
                                 label: 'Demmandes de rendez-vous',
                                 onPressed: () {
-                                  // Navigate to appointment screen
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RendezVousList(userId: null)));
                                 },
                               ),
                               HomeScreenCard(
@@ -131,6 +133,12 @@ class _ServiceHomeState extends State<ServiceHome> {
                                 onPressed: () {
                                   // Navigate to FAQs screen
                                 },
+                              ),  HomeScreenCard(
+                                icon: Icons.person_add,
+                                label: 'Nouveau Admin',
+                                onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupServiceSanitaire()));
+                                  },
                               ),
                             ],
                           ),
